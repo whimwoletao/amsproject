@@ -1,0 +1,69 @@
+
+
+
+                <div class="container">
+                    <div class="logo-container">
+                            <div class="text-center">
+                              <%= image_tag('bovalino.png')%>
+                            </div>
+                    </div>
+
+                              <div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-4 col-md-offset-4">         
+                                                <div class="card card-signup">
+                                                  <div class="form">
+                                                      <div class="header header-primary text-center">
+                                                        <% if request.subdomain != "www" %>
+                                                           <h2>  Log in</h2>
+                                                        <% else %>
+                                                          <h2>  Log in</h2>
+                                                        <% end %>
+                                                      </div>
+                                                        <div class="content">
+                                                            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                                                                <%= devise_error_messages! %>
+                                                                <div class="flasher row"><%= bootstrap_flash %></div>                
+                                                                <div class="input-group">
+                                                                  <span class="input-group-addon">
+                                                                     <i class="material-icons">email</i>
+                                                                  </span>                     
+                                                                  <%= f.email_field :email, :placeholder => 'E-mail', class: "form-control", html: {spellcheck: "false"} %>                     
+                                                                </div>
+
+                                                                 <div class="input-group">
+                                                                   <span class="input-group-addon">
+                                                                       <i class="material-icons">lock_outline</i>
+                                                                   </span>
+                                                         
+                                                                   <%= f.password_field :password, autocomplete: "off", :placeholder => 'password', class: "form-control", html: {spellcheck: "false"} %>
+                                                                 </div>
+
+                                                                  <% if devise_mapping.rememberable? -%>
+                                                                    <div class="checkbox">
+                                                                      <label>
+                                                                      <%= f.check_box :remember_me %>
+                                                                      <%= f.label :remember_me %>
+                                                                      </label>
+                                                                    </div>
+                                                                  <% end -%>
+
+                                                                  <div class="text-center">
+                                                                    <%= f.submit "Log in", class: "btn btn-primary btn-raised"%>
+                                                                  </div>
+                                                                <% end %>
+                                                                  <div class="text-center">
+                                                            
+                                                                  <%= render "users/shared/links" %>
+
+                                                                  </div>
+                                                        </div>
+                                                  </div>
+                                              </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                  </div>
+
