@@ -1,7 +1,8 @@
 class Users::RegistrationsController < Devise::RegistrationsController
    layout 'signin'
-   before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
+   #before_action :configure_sign_up_params, only: [:create]
+   before_action :configure_account_update_params, only: [:update]
+   before_action :configure_sign_up_params, if: :devise_controller?
 
   # GET /resource/sign_up
   # def new
@@ -9,9 +10,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+  end
 
   # GET /resource/edit
   # def edit
@@ -37,12 +38,28 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+   protected
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.for(:sign_up) << :name
-    devise_parameter_sanitizer.for(:sign_up) << :telephone
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :telephone])
+    # devise_parameter_sanitizer.for(:sign_up) << :name
+    # devise_parameter_sanitizer.for(:sign_up) << :telephone
+  end
+
+
+  def configure_account_update_params
+
+    # devise_parameter_sanitizer.for(:account_update) << :name
+    # devise_parameter_sanitizer.for(:account_update) << :telephone
+    # devise_parameter_sanitizer.for(:account_update) << :a_qualification
+    # devise_parameter_sanitizer.for(:account_update) << :a_cv
+    # devise_parameter_sanitizer.for(:account_update) << :a_experience
+    # devise_parameter_sanitizer.for(:account_update) << :a_gender
+    # devise_parameter_sanitizer.for(:account_update) << :a_dp
+    # devise_parameter_sanitizer.for(:account_update) << :a_city
+    # devise_parameter_sanitizer.for(:account_update) << :a_address
+    # devise_parameter_sanitizer.for(:account_update) << :a_country
   end
 
   # If you have extra params to permit, append them to the sanitizer.
@@ -51,9 +68,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  def after_sign_up_path_for(resource)
+    user_profile_path
+  end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)

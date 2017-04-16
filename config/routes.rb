@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/profile'
+
   # devise_for :users
   # get 'landings/index'
 
@@ -8,6 +10,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
     root 'landings#index'
+    get 'profile', to: 'users#profile', as: 'user_profile', :format => false
+    get 'profile2', to: 'users#profile2', as: 'user_profile2', :format => false
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -64,7 +68,7 @@ Rails.application.routes.draw do
    devise_scope :user do
     get    "login"   => "users/sessions#new",         as: :new_user_session
     post   "login"   => "users/sessions#create",      as: :user_session
-    delete "signout" => "users/sessions#destroy",     as: :destroy_user_session
+    get "signout" => "users/sessions#destroy",     as: :destroy_user_session
     put    "update_notification"  => "users#update_notification"
 
     get    "signup"  => "users/registrations#new",    as: :new_user_registration
