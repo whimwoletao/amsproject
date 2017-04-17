@@ -8,6 +8,9 @@ class UsersController < ApplicationController
   def profile2
   	@user = current_user
   end
+  def status
+  	@user = current_user
+  end
 
 
 end

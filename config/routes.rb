@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     root 'landings#index'
     get 'profile', to: 'users#profile', as: 'user_profile', :format => false
     get 'profile2', to: 'users#profile2', as: 'user_profile2', :format => false
-
+    get 'status', to: 'users#status', as: 'user_status', :format => false
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

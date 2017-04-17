@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/carrierwaveuploader/carrierwave.git
+  revision: 35f50359d2456d7a8a31948529e16557653fc359
+  specs:
+    carrierwave (1.0.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -160,6 +169,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 3.2.0)
   byebug
+  carrierwave!
   coffee-rails (~> 4.1.0)
   devise (~> 4.2, >= 4.2.1)
   jbuilder (~> 2.0)
