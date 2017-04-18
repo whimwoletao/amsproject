@@ -12,5 +12,11 @@ class UsersController < ApplicationController
   	@user = current_user
   end
 
+  def build_profile
+  	@user = current_user
+    render  :layout => 'wizard'
+    
+  end
+
 
 end

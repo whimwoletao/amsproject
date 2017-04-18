@@ -15,3 +15,6 @@ Rails.application.config.assets.precompile += %w( signin.js )
 
 Rails.application.config.assets.precompile += %w( dashboard.css )
 Rails.application.config.assets.precompile += %w( dashboard.js )
+
+Rails.application.config.assets.precompile += %w( wizard.css )
+Rails.application.config.assets.precompile += %w( wizard.js )
