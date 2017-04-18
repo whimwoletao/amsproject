@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'groups/create'
+
   get 'users/profile'
 
   # devise_for :users
