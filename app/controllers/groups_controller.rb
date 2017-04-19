@@ -1,7 +1,8 @@
 class GroupsController < ApplicationController
   layout 'user_dashboard'
   before_action :authenticate_user!
-  before_filter :set_up_user
+  before_action :set_up_user
+  before_action :set_up_group, :except => [:new, :create]
 
   def create
   	@group = Group.new(create_group_params)
@@ -9,6 +10,10 @@ class GroupsController < ApplicationController
   	if @group.save
   	  redirect_to  user_dashboard_path
   	end
+  end
+
+  def show
+  	@all_members = @group.members
   end
 
 
@@ -26,6 +31,11 @@ class GroupsController < ApplicationController
         # user's details
         @user = current_user
     end
+
+   def set_up_group
+        @group = Group.friendly.find(params[:group_id] || params[:id])
+   end
+
 
    def create_group_params
      params.permit(:name, :description,  :image, :city, :address, :email, :country,  :logo)
