@@ -1,6 +1,12 @@
 require 'bcrypt'
 class UsersController < ApplicationController
  layout 'user_dashboard'
+ before_action :set_up_user
+
+   def set_up_user
+        @user = current_user
+        #@notification = Notification.where(user_id: @user.id, read: 0)
+    end
 
   def profile
   	@user = current_user
@@ -17,6 +23,11 @@ class UsersController < ApplicationController
   def account
   	@user = current_user
   end
+
+  def dashboard
+
+  end
+
 
   def build_profile
   	@user = current_user

@@ -13,6 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require_tree
 //= stub signin
-//
-//= require_tree .
+//= require bootstrap-sprockets
+//= stub dashboard
+
+

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'groups/create'
+  # get 'groups/create'
 
   get 'users/profile'
 
@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
     root 'landings#index'
+
     get "dashboard/check_password", to: "users#check_password", as: 'check_password'
     get "edit_profile", to: "users#account", as: 'user_account', :format => false
     post "build_profile_update", to: "users#update_profile", as: 'update_profile', :format => false
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
     get 'profile2', to: 'users#profile2', as: 'user_profile2', :format => false
     get 'status', to: 'users#status', as: 'user_status', :format => false
     get 'my_page', to: 'users#my_page', as: 'user_page', :format => false
+    get 'dashboard', to: 'users#dashboard', as: 'user_dashboard', :format => false
     get 'new_member', to: 'users#build_profile', as: 'build_profile', :format => false
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -57,7 +59,7 @@ Rails.application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-
+  resources :groups
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

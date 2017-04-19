@@ -1,16 +1,30 @@
 source 'https://rubygems.org'
 
 
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use postgresql as the database for Active Record
-gem 'pg'
+group :development, :test do
+  gem 'pg'
+end
+
+group :production do
+  gem 'pg'
+end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
+# for creating environmental viarible
+gem 'figaro'
+# creating fog file to help with aws configuration
+gem 'fog'
+# rails admin gem for admin dashboard
+gem 'rails_admin'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
  gem 'bootstrap-sass', '~> 3.2.0'
@@ -18,9 +32,15 @@ gem 'devise', '~> 4.2', '>= 4.2.1'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+# Use jquery as the JavaScript library
+gem 'jquery-ui-rails'
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
-# to upload files from local 
+# friendly id, will be used to search instead of id
+gem 'friendly_id'
+
+# to upload files from local
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
