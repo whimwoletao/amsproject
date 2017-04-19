@@ -1,8 +1,8 @@
 class MembersController < ApplicationController
+  before_action  :set_up_group, only: [:create]
   before_action :set_member, only: [:show, :edit, :update, :destroy]
 
-  # GET /members
-  # GET /members.json
+
   def index
     @members = Member.all
   end
@@ -62,6 +62,12 @@ class MembersController < ApplicationController
   end
 
   private
+
+
+
+    def set_up_group
+        @group = Group.friendly.find(params[:group_id] || params[:id])
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_member
       @member = Member.find(params[:id])

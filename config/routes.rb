@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :members
+  
   # get 'groups/create'
 
   get 'users/profile'
@@ -60,7 +60,11 @@ Rails.application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  resources :groups
+  resources :groups do
+    resources :members
+
+
+  end
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
