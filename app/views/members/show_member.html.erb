@@ -1,0 +1,116 @@
+
+
+<div class="wrapper">
+   <%= render partial: "users/sidebar" %>
+    <div class="main-panel expand">
+
+        <!-- TODO Add Footer Partial -->
+        <%= render partial: "users/navbar" %>
+
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="col-md-8 col-md-offset-2">
+
+
+                  <div class="card card-user">
+
+                         <div class="image">
+                            <%= image_tag('background.jpg') %>
+                        </div>
+                        <div class="content">
+                            <div class="author">
+
+
+                            <% if @member.image.file.nil? %>
+                                <%= image_tag('default-avatar.png', class:"avatar border-white", alt:"...") %>
+
+                            <% else %>
+                                <img src="<%=@member.dp.url %>"  class="avatar border-white" alt="..." />
+
+                            <% end %>
+
+                              <h4 class="title"><%= @member.name %><br>
+                                 <a href="#"><small><%= @member.email %></small></a>
+                              </h4>
+                            </div>
+                            <p class="description text-center">
+
+                                  Status: Member
+
+
+
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="text-center">
+                            <div class="row">
+                                <div class="col-md-6">
+                                   <%= link_to user_profile_path(current_user) do %>
+                                      <h5><%= puts 5 %><br><small>Application(s)</small></h5>
+                                   <% end %>
+                                </div>
+                                <div class="col-md-6">
+                                  <%= link_to user_profile_path(current_user) do %>
+                                      <h5><%= puts 10 %><br><small> Organization(s)</small></h5>
+                                   <% end %>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+         <div class="row">
+          <div class="col-lg-12 col-md-12">
+              <div class="card box-shape">
+                      <div>
+                          <div class="header">
+                            <%= link_to 'Edit your details', user_account_path, class: "btn float-right box-shape" %>
+
+                          </div>
+                      </div>
+
+
+                    <div class="content">
+                        <div class="content table-responsive table-full-width">
+                          <table class="table table-striped">
+                            <tbody>
+                              <tr><td >Description</td><td style="white-space: pre-line;"><%= @member.id %></td></tr>
+                              <tr><td>Instruction</td><td style="white-space: pre-line;"><%= @member.id %></td></tr>
+                              <tr><td>Message</td><td style="white-space: pre-line;"><%= @member.id %></td></tr>
+                              <tr><td>Token</td><td><%= @member.id %></td></tr>
+                              <tr><td>Deadline</td><td><%= @member.id %></td></tr>
+                              <tr><td>Access</td>
+                                <td><%= (@member.id == "1") ? "Private": "Public" %></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                    </div> 
+
+                  
+              </div>
+           </div>
+
+        </div>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+ <script >
+    <% flash.each do |key, value| %>
+        showMessage('top','center', "<%= value %>", 2);
+    <% end %>
+</script>

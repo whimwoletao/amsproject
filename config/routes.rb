@@ -61,7 +61,10 @@ Rails.application.routes.draw do
   #     end
   #   end
   resources :groups do
-    resources :members
+    resources :members do
+      get "single", to: "members#show_member", as: "show_member"
+    end
+
 
 
   end

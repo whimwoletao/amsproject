@@ -1,0 +1,23 @@
+
+<div class="content">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div >
+                    <div class="row sharing-area text-center">
+                        <br> <br> <br> <br>
+                        <h5>Add Member to Your Association</h5>
+
+                     <%= link_to new_group_member_path(params[:group_id] || params[:id]) do %>
+                        <button  type="button" class="btn btn-raised btn-twitter">Add Member</button>
+                    <% end %>
+
+
+                        <br> <br> <br> <br><br> <br>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

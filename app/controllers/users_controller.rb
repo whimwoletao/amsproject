@@ -1,6 +1,7 @@
 require 'bcrypt'
 class UsersController < ApplicationController
  layout 'user_dashboard'
+ before_action :authenticate_user!
  before_action :set_up_user
 
    def set_up_user

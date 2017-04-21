@@ -1,34 +1,38 @@
 class MembersController < ApplicationController
-  before_action  :set_up_group, only: [:create]
-  before_action :set_member, only: [:show, :edit, :update, :destroy]
+  layout 'user_dashboard'
+  before_action  :set_up_group, only: [:create, :index, :new]
+  before_action :set_member, only: [:show, :edit, :update, :destroy, :show_member]
 
 
   def index
     @members = Member.all
   end
 
-  # GET /members/1
-  # GET /members/1.json
+
   def show
   end
 
-  # GET /members/new
+
   def new
     @member = Member.new
+    render :layout => 'wizard'
   end
 
-  # GET /members/1/edit
+
   def edit
   end
 
-  # POST /members
-  # POST /members.json
+  def show_member
+  end
+
+
   def create
     @member = Member.new(member_params)
+    @member.group_id = @group.id
 
     respond_to do |format|
       if @member.save
-        format.html { redirect_to @member, notice: 'Member was successfully created.' }
+        format.html { redirect_to group_members_path, notice: 'Member was successfully created.' }
         format.json { render :show, status: :created, location: @member }
       else
         format.html { render :new }
@@ -37,8 +41,7 @@ class MembersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /members/1
-  # PATCH/PUT /members/1.json
+
   def update
     respond_to do |format|
       if @member.update(member_params)
@@ -56,7 +59,7 @@ class MembersController < ApplicationController
   def destroy
     @member.destroy
     respond_to do |format|
-      format.html { redirect_to members_url, notice: 'Member was successfully destroyed.' }
+      format.html { redirect_to group_members_path, notice: 'Member was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,9 +72,11 @@ class MembersController < ApplicationController
         @group = Group.friendly.find(params[:group_id] || params[:id])
     end
     # Use callbacks to share common setup or constraints between actions.
+
     def set_member
-      @member = Member.find(params[:id])
+      @member = Member.find(params[:member_id] || params[:id])
     end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def member_params

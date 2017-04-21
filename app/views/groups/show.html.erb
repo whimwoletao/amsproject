@@ -1,0 +1,68 @@
+
+<div class="wrapper">
+    
+
+<!-- TODO Add Sidebar Panel -->
+    <%= render partial: "sidebar" %>
+    <div class="main-panel">
+<!-- TODO Add Navbar Panel -->
+    <%= render partial: "users/navbar" %>
+        <div class="content card-start ">
+            <div class="container-fluid">
+
+
+               <!-- when empty -->
+            <% if @all_members.length == 0  %>
+             <%= render partial: "when_empty" %>
+            <% end %>
+
+                <div class="row" >
+
+                  <% @all_members.each do |member| %>
+
+
+                      <div class=" col-md-4">
+                          <div class="img-responsive card box-shape">
+
+                            <%= link_to group_member_show_member_path(group_id: @group.slug, member_id: member.id ) do %>
+                              <div class="content">
+
+                                      <p><%= truncate( member.name, :length => 35) %> </p>
+                                      <div class="text-center numbers-1">
+ 
+                                        <br>
+                                      </div>
+                                  <div class="chart-legend">
+                                       <br> <i class="fa fa-circle text-danger"></i> sex: <%= member.gender %>
+                                       <br> <i class="fa fa-circle text-danger"></i> Age: <%= member.age %>
+                                       <br><i class="fa fa-circle text-warning"></i> Email : <%= member.email %>
+                                       <br><i class="fa fa-circle text-warning"></i> Telephone : <%= member.telephone %>
+                                    </div>
+                                  <div class="footer">
+                                      <hr>
+                                      <div class="stats">
+                                          <!-- <i class="ti-reload"> -->
+                                          </i> Status: member
+                                      </div>
+                                  </div>
+                              </div>
+
+                            <% end %>
+                          </div>
+                      </div>
+
+                  <% end %>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+
+</script>

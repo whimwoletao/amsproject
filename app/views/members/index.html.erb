@@ -26,9 +26,9 @@
         <td><%= member.address %></td>
         <td><%= member.image %></td>
         <td><%= member.gender %></td>
-        <td><%= link_to 'Show', member %></td>
-        <td><%= link_to 'Edit', edit_member_path(member) %></td>
-        <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show',  group_member_path(id: member.id) %></td>
+        <td><%= link_to 'Edit', edit_group_member_path(id: member.id) %></td>
+        <td><%= link_to 'Destroy', group_member_path(id:member.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Member', new_member_path %>
+<%= link_to 'New Member', new_group_member_path %>
