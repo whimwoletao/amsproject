@@ -30,16 +30,15 @@ class MembersController < ApplicationController
     @member = Member.new(member_params)
     @member.group_id = @group.id
 
-    respond_to do |format|
+
       if @member.save
-        format.html { redirect_to group_members_path, notice: 'Member was successfully created.' }
-        format.json { render :show, status: :created, location: @member }
+        redirect_to group_path(id:@group.slug)
       else
         format.html { render :new }
         format.json { render json: @member.errors, status: :unprocessable_entity }
       end
-    end
   end
+
 
 
   def update
