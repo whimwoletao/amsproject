@@ -1,6 +1,6 @@
   <div class="wizard-header">
         <h3 class="wizard-title"><%= n %></h3>
-        <p class="category">Kindly fill out the interview details as required </p>
+        <p class="category">Kindly fill out the member details as required </p>
     </div>
 
 <div class="wizard-navigation">
@@ -33,15 +33,15 @@
                                   <div class="row">
                                         <div class="col-md-5">
                                             <div class="form-group">
-                                                   <%= f.label :association %>
-                                                   <%= f.text_field :name,:id => 'title-association', :value => 'group name', :placeholder => 'Role Title', class: "form-control border-input interview-details", html: {spellcheck: "false"} %>
+                                                   <%= f.label :full_name %>
+                                                   <%= f.text_field :name,:id => 'title-association',  :placeholder => 'Full name of member', class: "form-control border-input interview-details", html: {spellcheck: "false"} %>
 
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                 <%= f.label :username %>
-                                                <%= f.text_field :name,:id => 'title-username', :placeholder => 'Username', class: "form-control border-input interview-details", html: {spellcheck: "false"} %>
+                                                 <%= f.label :nickname %>
+                                                <%= f.text_field :username,:id => 'title-username', :placeholder => 'Username', class: "form-control border-input interview-details", html: {spellcheck: "false"} %>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -53,10 +53,19 @@
                                     </div>
 
                                       <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
-                                                 <%= f.label :first_name %>
-                                                 <%= f.text_field :name,:id => 'title-fname', :placeholder => 'First Name', class: "form-control border-input interview-details", html: {spellcheck: "false"} %>
+                                                 <%= f.label :age %>
+                                                 <%= f.text_field :age,:id => 'title-fname', :placeholder => 'age', class: "form-control border-input interview-details", html: {spellcheck: "false"} %>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                 <%= f.label :sex %>
+
+
+                                                  <%= f.text_field :gender,:id => 'title-fname', :placeholder => 'Male or Female', class: "form-control border-input interview-details", html: {spellcheck: "false"} %>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -80,20 +89,20 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <%= f.label :city %>
-                                                <%= f.text_field :name,:id => 'title-city', :placeholder => 'City', class: "form-control border-input interview-details", html: {spellcheck: "false"} %>
+                                                <%= f.text_field :city,:id => 'title-city', :placeholder => 'City', class: "form-control border-input interview-details", html: {spellcheck: "false"} %>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                    <%= f.label :country %>
-                                                   <%= f.text_field :name,:id => 'title-country', :placeholder => 'Country', class: "form-control border-input interview-details", html: {spellcheck: "false"} %>
+                                                   <%= f.text_field :country,:id => 'title-country', :placeholder => 'Country', class: "form-control border-input interview-details", html: {spellcheck: "false"} %>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                             <%= f.label :country %>
                                                 <label>Postal Code</label>
-                                                <%= f.text_field :name,:id => 'title-postalcode', :placeholder => 'Postal code', class: "form-control border-input interview-details", html: {spellcheck: "false"} %>
+                                                <%= f.text_field :country,:id => 'title-postalcode', :placeholder => 'Postal code', class: "form-control border-input interview-details", html: {spellcheck: "false"} %>
                                             </div>
                                         </div>
                                     </div>
@@ -101,8 +110,8 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <%= f.label :about_me %>
-                                                <textarea rows="5" class="form-control border-input" placeholder="Here can be your description" value="Mike">Oh so, your weak rhyme
+                                                <%= f.label :additional_member_info %>
+                                                <textarea  name:"info" rows="5" class="form-control border-input" placeholder="Here can be your description" value="Mike">Oh so, your weak rhyme
 You doubt I'll bother, reading into it
 I'll probably won't, left to my own devices
 But that's the difference in our opinions.</textarea>
@@ -154,36 +163,33 @@ But that's the difference in our opinions.</textarea>
           <div class="tab-pane" id="captain">
               <div class="row">
                   <div class="col-sm-10 col-sm-offset-1">
-                   
+
 
       <div class="text-center">
         <h5>Add Member Image </h5>
         <div class="row" >
-          
+
                                                 <div class="picture-container">
                                                     <div class="picture">
                                                         <%= image_tag('default.jpg', class:"picture-src", id:"wizardPicturePreview",title:"") %>
 
-                                                        <input type="file" id="wizard-picture" name="">
+                                                        <input type="file" id="wizard-picture" name="image" val ="bobo">
                                                     </div>
                                                     <h6>Choose Logo</h6>
                                                     <small> Transparent 330 X 80 </small>
                                                 </div>
-                                            
-      
+
         </div>
       </div>
 
-      
-        <hr>
-     
 
-    
-                           
+        <hr>
+
+
                   </div>
               </div>
           </div>
-          
+
       </div>
       <div class="wizard-footer">
         <div class="pull-right">
