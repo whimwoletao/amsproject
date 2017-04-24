@@ -1,6 +1,6 @@
 
 <div class="wrapper">
-
+    
 
 <!-- TODO Add Sidebar Panel -->
     <%= render partial: "sidebar" %>
@@ -12,13 +12,15 @@
 
 
                <!-- when empty -->
-            <% if @all_members.length == 0  %>
-             <%= render partial: "when_empty" %>
+            <% if @member.length == 0  %>
+             <div class="card-content center">
+                    <h4 class="title uppercase">No Member Found <br> </h4>
+                 </div>
             <% end %>
 
                 <div class="row" >
 
-                  <% @all_members.each do |member| %>
+                  <% @member.each do |member| %>
 
 
                       <div class=" col-md-4">

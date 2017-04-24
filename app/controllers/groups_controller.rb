@@ -13,8 +13,27 @@ class GroupsController < ApplicationController
   end
 
   def show
+
+  	if  params[:search]
+  		#@all_members = Member.where(group_id:@group.id)
+  		@all_members = Member.search(params[:search]).where(group_id: @group.id)
+  	else
   	@all_members = @group.members
-  end
+  	# if params[:search]
+  	# 	@all_members = Member.search(params[:search]).where(group_id: @group.id)
+  	# 	 @all_members = Member.last
+   #  end
+   end
+ end
+
+
+  # def search_member
+  # 	#@member = @group.members.search(params[:search])
+  # 	if params[:search]
+  # 		@member = Member.search(params[:search])
+  #  end
+  #   redirect_to
+  # end
 
 
   def new
