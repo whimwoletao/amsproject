@@ -22,11 +22,11 @@
                             <div class="author">
 
 
-                            <% if @member.image.file.nil? %>
+                            <% if @member.pic.file.nil? %>
                                 <%= image_tag('default-avatar.png', class:"avatar border-white", alt:"...") %>
 
                             <% else %>
-                                <img src="<%=@member.image.url %>"  class="avatar border-white" alt="..." />
+                                <img src="<%=@member.m_dp.url %>"  class="avatar border-white" alt="..." />
 
                             <% end %>
 
@@ -79,13 +79,13 @@
                         <div class="content table-responsive table-full-width">
                           <table class="table table-striped">
                             <tbody>
-                              <tr><td >Description</td><td style="white-space: pre-line;"><%= @member.id %></td></tr>
-                              <tr><td>Instruction</td><td style="white-space: pre-line;"><%= @member.id %></td></tr>
-                              <tr><td>Message</td><td style="white-space: pre-line;"><%= @member.id %></td></tr>
-                              <tr><td>Token</td><td><%= @member.id %></td></tr>
-                              <tr><td>Deadline</td><td><%= @member.id %></td></tr>
-                              <tr><td>Access</td>
-                                <td><%= (@member.id == "1") ? "Private": "Public" %></td>
+                              <tr><td >Name</td><td style="white-space: pre-line;"><%= @member.name %></td></tr>
+                              <tr><td>Age</td><td style="white-space: pre-line;"><%= @member.age %></td></tr>
+                              <tr><td>Email</td><td style="white-space: pre-line;"><%= @member.email %></td></tr>
+                              <tr><td>Telephone</td><td><%= @member.telephone %></td></tr>
+                              <tr><td>Address</td><td><%= @member.address %></td></tr>
+                            
+                            <tr><td>City</td><td><%= @member.city %></td></tr>
                               </tr>
                             </tbody>
                           </table>
