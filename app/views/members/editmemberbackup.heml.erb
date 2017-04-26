@@ -1,0 +1,160 @@
+
+<div class="wrapper">
+    
+  
+<!-- TODO Add Sidebar Panel -->
+    <%= render partial: "users/sidebar" %>
+    <div class="main-panel">
+<!-- TODO Add Navbar Panel -->
+    <%= render partial: "users/navbar" %>
+
+                <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-4 col-md-5">
+                        <div class="cnavbar-brand">
+
+                            <div class="text-center">
+                                <div class="">
+                                   <h5> EDIT MEMBER INFORMATION</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card box-shape">
+                            <div class="header">
+                                <h4 class="title"> <%= @member.name%> </h4>
+                            </div>
+                            <div class="content">
+                                <ul class="list-unstyled team-members">
+
+
+
+                                        </ul>
+
+
+
+
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-7">
+                        <div class="card box-shape">
+                            <div class="header">
+                                <h4 class="title">Profile</h4>
+                            </div>
+                            <div class="content">
+
+                                <!-- form start here  -->
+                                <form method="put" enctype="multipart/form-data" action="<%= edit_group_member_path(group_id:@group.slug, member_id:@member.id) %>">
+                                    <div class="row">
+                                        <div class="col-md-7">
+                                            <div class="form-group">
+                                                <label>Name</label>
+                                                <input type="text" class="form-control border-input" disabled="" placeholder="name" value="<%=  @member.name %>">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label > Email</label>
+                                                <input type="text" class="form-control border-input" value="<%= @member.email %>"  disabled="" placeholder="subdomain" name="subdomain">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Address</label>
+                                                <input type="text" class="form-control border-input" placeholder="Company Address" value="<%= @member.address %>" class="address" name="address">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>City</label>
+                                                <input type="text" class="form-control border-input" placeholder="City" value="<%= @member.city %>" name="city">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Country</label>
+                                                <input type="text" class="form-control border-input" placeholder="Country" disabled="" value="<%= @member.country %>">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Details</label>
+                                                <textarea rows="5" class="form-control border-input" placeholder="Description" name="info">
+                                            </textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div class="row">
+                                    <div class ="text-center">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="file-upload" class="btn custom-upload">
+                                                    <input id="file-upload" type="file" name="pic">
+
+                                                </label>
+                                                <div class="text-center"><label>Transparent 330 X 80 pixels </label></div>
+
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+
+                                    <!--  this will allow rails to use put method since it can 
+                                    be used from a form submission  -->
+                                    <input name="_method" type="hidden" value="put" />
+
+                                     <!-- add csrf token -->
+
+
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-info btn-fill btn-wd">Update Profile</button>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

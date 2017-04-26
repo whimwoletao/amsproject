@@ -1,7 +1,7 @@
 class MembersController < ApplicationController
   layout 'user_dashboard'
   before_action :authenticate_user!
-  before_action  :set_up_group, only: [:create, :index, :new]
+  before_action  :set_up_group, only: [:create, :index, :new, :show_member, :edit, :update]
   before_action :set_member, only: [:show, :edit, :update, :destroy, :show_member]
 
 
@@ -21,6 +21,7 @@ class MembersController < ApplicationController
 
 
   def edit
+    render  :layout => 'wizard'
   end
 
   def show_member
@@ -33,7 +34,7 @@ class MembersController < ApplicationController
 
 
       if @member.save
-        redirect_to group_path(id:@group.slug)
+        redirect_to group_path(id:@member.slug)
       else
         format.html { render :new }
         format.json { render json: @member.errors, status: :unprocessable_entity }
@@ -45,8 +46,8 @@ class MembersController < ApplicationController
   def update
     respond_to do |format|
       if @member.update(member_params)
-        format.html { redirect_to @member, notice: 'Member was successfully updated.' }
-        format.json { render :show, status: :ok, location: @member }
+        format.html { redirect_to group_member_show_member_path(group_id:@group.slug, member_id:@member.id) }
+
       else
         format.html { render :edit }
         format.json { render json: @member.errors, status: :unprocessable_entity }

@@ -26,7 +26,7 @@
                                 <%= image_tag('default-avatar.png', class:"avatar border-white", alt:"...") %>
 
                             <% else %>
-                                <img src="<%=@member.m_dp.url %>"  class="avatar border-white" alt="..." />
+                                <img src="<%=@member.pic.url %>"  class="avatar border-white" alt="..." />
 
                             <% end %>
 
@@ -69,7 +69,7 @@
               <div class="card box-shape">
                       <div>
                           <div class="header">
-                            <%= link_to 'Edit your details', user_account_path, class: "btn float-right box-shape" %>
+                            <%= link_to 'Edit member details', edit_group_member_path(group_id:@group.slug, id:@member.id), class: "btn float-right box-shape" %>
 
                           </div>
                       </div>
@@ -84,9 +84,9 @@
                               <tr><td>Email</td><td style="white-space: pre-line;"><%= @member.email %></td></tr>
                               <tr><td>Telephone</td><td><%= @member.telephone %></td></tr>
                               <tr><td>Address</td><td><%= @member.address %></td></tr>
-                            
+
                             <tr><td>City</td><td><%= @member.city %></td></tr>
-                              </tr>
+                             <tr><td>Details</td><td><%= @member.info %></td></tr>
                             </tbody>
                           </table>
                         </div>
