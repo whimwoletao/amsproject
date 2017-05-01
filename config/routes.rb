@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   # get 'groups/create'
-
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'users/profile'
 
   # devise_for :users
