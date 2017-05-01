@@ -34,7 +34,7 @@ class MembersController < ApplicationController
 
 
       if @member.save
-        redirect_to group_path(id:@member.slug)
+        redirect_to group_path(id:@group.slug)
       else
         format.html { render :new }
         format.json { render json: @member.errors, status: :unprocessable_entity }
