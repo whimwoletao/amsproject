@@ -27,11 +27,21 @@
                             <%= link_to group_member_show_member_path(group_id: @group.slug, member_id: member.id ) do %>
                               <div class="content">
 
+
                                       <p><%= truncate( member.name, :length => 35) %> </p>
                                       <div class="text-center numbers-1">
  
                                         <br>
                                       </div>
+                                      <div class="text-center">
+                          <% if member.pic.file.nil? %>
+                                <%= image_tag('default-avatar.png', class:"avatar border-white", alt:"...") %>
+
+                            <% else %>
+                                <img src="<%=member.pic.url %>"  class="avatar border-white" alt="..." />
+
+                            <% end %>
+                            </div>
                                   <div class="chart-legend">
                                        <br> <i class="fa fa-circle text-danger"></i> sex: <%= member.gender %>
                                        <br> <i class="fa fa-circle text-danger"></i> Age: <%= member.age %>
