@@ -27,10 +27,12 @@ gem 'fog'
 gem 'rails_admin'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
- gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap-sass', '~> 3.2.0'
 gem 'devise', '~> 4.2', '>= 4.2.1'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+# rollbar for error tracking
+gem 'rollbar'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # Use jquery as the JavaScript library
 gem 'jquery-ui-rails'
