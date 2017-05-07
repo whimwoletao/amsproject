@@ -12629,7 +12629,7 @@ header .logo {
   height: 56px;
   margin-left: 0 !important;
   width: 137px;
-  background-image: url("bovalino.png");
+  background: url("bovalino.png");
   background-repeat: no-repeat;
   background-position: 50% 0;
   -moz-transition: none;
@@ -13212,7 +13212,7 @@ header nav ul a:focus {
 /* line 419, ../scss/custom/_content.scss */
 #video {
   height: 645px;
-  background-image: url(video-img.jpg);
+  background: url(video-img.jpg);
   background-repeat: no-repeat;
   background-position: 50% 50%;
   -moz-background-size: cover;
@@ -13229,7 +13229,7 @@ header nav ul a:focus {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("video-opacity.png");
+  background: url("video-opacity.png");
   background-repeat: repeat;
   z-index: 5;
 }
@@ -13255,7 +13255,7 @@ header nav ul a:focus {
 }
 /* line 446, ../scss/custom/_content.scss */
 #video .console button:before {
-  background-image: url("play.png");
+  background: url("play.png");
   background-repeat: no-repeat;
   background-position: 55% 0;
   width: 27px;
@@ -13586,7 +13586,7 @@ header nav ul a:focus {
 }
 /* line 755, ../scss/custom/_content.scss */
 #team .background-img {
-  background-image: url("team-bgr.jpg");
+  background: url("team-bgr.jpg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   -moz-background-size: cover;
@@ -15520,7 +15520,7 @@ body.slide-active {
   content: "";
   left: 0;
   top: 0;
-  background-image: url("subheader-img-wrap.png");
+  background: url("subheader-img-wrap.png");
   width: 100%;
   height: 100%;
   background-repeat: repeat;
@@ -16068,13 +16068,13 @@ body.slide-active {
 }
 /* line 154, ../scss/custom/_team-slider.scss */
 #team .owl-prev {
-  background-image: url("left-arrow1.png");
+  background: url("left-arrow1.png");
   left: 50%;
   margin-left: -55px !important;
 }
 /* line 159, ../scss/custom/_team-slider.scss */
 #team .owl-next {
-  background-image: url("right-arrow1.png");
+  background: url("right-arrow1.png");
   right: 50%;
   margin-right: -55px !important;
 }
@@ -17417,7 +17417,7 @@ button::-moz-focus-inner {
   -o-transition: all 0.4s ease;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
-  background-image: url("left-arrow1.png") !important;
+  background: url("left-arrow1.png") !important;
   background-repeat: no-repeat;
   background-position: 50% 50%;
   -webkit-tap-highlight-color: transparent;
