@@ -12629,7 +12629,7 @@ header .logo {
   height: 56px;
   margin-left: 0 !important;
   width: 137px;
-  background: url("bovalino.png");
+  background-image:  url("bovalino.png");
   background-repeat: no-repeat;
   background-position: 50% 0;
   -moz-transition: none;
@@ -13212,14 +13212,14 @@ header nav ul a:focus {
 /* line 419, ../scss/custom/_content.scss */
 #video {
   height: 645px;
-  background: url(video-img.jpg);
+  background: url("video-img.jpg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   -moz-background-size: cover;
   -o-background-size: cover;
   -webkit-background-size: cover;
   background-size: cover;
-  -ms-behavior: url(backgroundsize.htc);
+  -ms-behavior: url("backgroundsize.htc");
   position: relative;
 }
 /* line 426, ../scss/custom/_content.scss */
@@ -13229,7 +13229,7 @@ header nav ul a:focus {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("video-opacity.png");
+  background-image: url("video-opacity.png");
   background-repeat: repeat;
   z-index: 5;
 }
@@ -13255,7 +13255,7 @@ header nav ul a:focus {
 }
 /* line 446, ../scss/custom/_content.scss */
 #video .console button:before {
-  background: url("play.png");
+  background-image: url("play.png");
   background-repeat: no-repeat;
   background-position: 55% 0;
   width: 27px;
@@ -15834,11 +15834,11 @@ body.slide-active {
 /* line 96, ../scss/custom/_follower-slider.scss */
 #follow .follow-slider .prev {
   right: 62px;
-  background-image: url("left-arrow.png");
+  background: url("left-arrow.png");
 }
 /* line 101, ../scss/custom/_follower-slider.scss */
 #follow .follow-slider .next {
-  background-image: url("right-arrow.png");
+  background: url("right-arrow.png");
 }
 
 /* line 4, ../scss/custom/_team-slider.scss */
@@ -16074,7 +16074,7 @@ body.slide-active {
 }
 /* line 159, ../scss/custom/_team-slider.scss */
 #team .owl-next {
-  background: url("right-arrow1.png");
+  background-image: url("right-arrow1.png");
   right: 50%;
   margin-right: -55px !important;
 }
