@@ -26,7 +26,7 @@ gem 'figaro'
 # creating fog file to help with aws configuration
 gem 'fog'
 #for resizing images
-gem "mini_magick"
+gem 'mini_magick', '~> 4.3'
 # rails admin gem for admin dashboard
 gem 'rails_admin'
 # See https://github.com/rails/execjs#readme for more supported runtimes

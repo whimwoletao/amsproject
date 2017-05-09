@@ -12,12 +12,12 @@
 
             	<div class="row">
                         <div class="header col-md-4 col-md-offset-2">
-                                <h4 class="title">Associations (<%= @user.groups.length %>)</h4>
+                                <h4 class="title">Association Branches (<%= @user.groups.length %>)</h4>
                         </div>
                         <% if @user.groups.length > 0 %>
                           <div class="col-md-4 col-md-offset-2">
                               <%= link_to new_group_path do %>
-                                  <button  type="button" class="btn btn-raised btn-twitter">New Association</button>
+                                  <button  type="button" class="btn btn-raised btn-twitter">Add New Branch</button>
                               <% end %>
                           </div>
 

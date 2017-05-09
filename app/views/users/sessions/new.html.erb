@@ -24,12 +24,18 @@
                                                         <div class="content">
                                                             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                                                                 <%= devise_error_messages! %>
-                                                                <div class="flasher row"><%= bootstrap_flash %></div>                
+                                                                <div class="flasher row"><%= bootstrap_flash %></div>
                                                                 <div class="input-group">
                                                                   <span class="input-group-addon">
                                                                      <i class="material-icons">email</i>
-                                                                  </span>                     
-                                                                  <%= f.email_field :email, :placeholder => 'E-mail', class: "form-control", html: {spellcheck: "false"} %>                     
+                                                                  </span>
+
+
+                                                        <div class="form-group is-empty">
+                                                                  <%= f.email_field :email, :placeholder => 'E-mail', class: "form-control", html: {spellcheck: "false"} %>
+                                                      <span class="material-input"></span></div>
+
+
                                                                 </div>
 
                                                                  <div class="input-group">
