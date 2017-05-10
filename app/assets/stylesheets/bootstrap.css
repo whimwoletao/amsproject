@@ -12803,7 +12803,7 @@ header nav ul a:focus {
 /* line 87, ../scss/custom/_content.scss */
 #top {
   background-repeat: no-repeat;
-  background: url("right-arrow1.png");
+  background-image: url("right-arrow1.png");
   background-color: rgba(0, 0, 0, 0.2);
   background-position: 50% 50%;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
