@@ -1120,6 +1120,7 @@ output {
   background-repeat: no-repeat;
   background-position: center bottom, center calc(100% - 1px);
   background-color: transparent;
+  color:black;
   transition: background 0s ease-out;
   float: none;
   box-shadow: none;
